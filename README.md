@@ -1,6 +1,7 @@
 # 2022-BDK6.5.3-P3_Gruppe_7
 ## Gruppenarbeit BDK6.5.3
 ### Gruppe 7
+
 *Personen: Matthias Kick, Natalia Kiseleva, Melissa Müller*
 
 *Datensatz: British Library printed music (Records for printed music held at the British Library)*
