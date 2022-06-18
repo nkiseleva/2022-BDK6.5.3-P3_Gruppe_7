@@ -1,0 +1,239 @@
+2022-BDK6.5.3-P3_Gruppe_7
+British Library printed music
+Frage X: Welche fünf Komponisten kommen am häufigsten vor?
+
+
+```python
+import urllib.request
+import pandas as pd
+#pandas importieren
+```
+
+
+```python
+dataset = pd.read_csv("detailedrecords.csv", low_memory=False)
+#pull the file
+```
+
+
+```python
+dataset.head()
+#check the head of the file
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BL record ID</th>
+      <th>Composer</th>
+      <th>Composer life dates</th>
+      <th>Title</th>
+      <th>Standardised title</th>
+      <th>Other titles</th>
+      <th>Other names</th>
+      <th>Publication date (standardised)</th>
+      <th>Publication date (not standardised)</th>
+      <th>Country of publication</th>
+      <th>...</th>
+      <th>Contents</th>
+      <th>Referenced in</th>
+      <th>Subject/genre terms</th>
+      <th>Physical description</th>
+      <th>Series title</th>
+      <th>Number within series</th>
+      <th>ISBN</th>
+      <th>ISMN</th>
+      <th>Publisher number</th>
+      <th>BL shelfmark</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1279866</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>The Penguin book of Canadian Folk songs</td>
+      <td>NaN</td>
+      <td>Canadian folk songs</td>
+      <td>Fowke, Edith ; MacMillan, Keith (Keith Campbell)</td>
+      <td>1973</td>
+      <td>1973</td>
+      <td>England</td>
+      <td>...</td>
+      <td>A Fenian song -- Bold Wolfe -- The battle of t...</td>
+      <td>NaN</td>
+      <td>Folk songs--Canada ; Folk songs, French--Canada</td>
+      <td>224 pages, music, 20 cm</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0140708421</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>mH00/3305 ; X.439/3548</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1312079</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Anthology for The musician's guide to theory a...</td>
+      <td>NaN</td>
+      <td>Musician's guide, anthology ; Musician's guide...</td>
+      <td>Clendinning, Jane Piper ; Marvin, Elizabeth West</td>
+      <td>2005</td>
+      <td>c2005</td>
+      <td>New York (State)</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Musical analysis--Music collections</td>
+      <td>1 score (vii, 260 pages), 28 cm</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0393925765</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>F.1946.h</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1706700</td>
+      <td>Hofhaimer, Paul</td>
+      <td>1459-1537</td>
+      <td>Harmoniae poeticae Pauli Hofheimeri : viri equ...</td>
+      <td>Harmoniae poeticae</td>
+      <td>Harmoniae poeticae Pauli Hofheimeri, &amp; Ludovic...</td>
+      <td>Horace ; Stomius, Johannes ; Senfl, Ludwig</td>
+      <td>1539</td>
+      <td>1539</td>
+      <td>Germany</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>RISM B/I 1539²⁶</td>
+      <td>Part songs, Latin</td>
+      <td>5 parts, 8°</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1070.c.12.(1.) ; 1213.i.1 ; G.727</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1825532</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Istituzioni e monumenti dell'arte musicale ita...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1931</td>
+      <td>1931-1939</td>
+      <td>Italy</td>
+      <td>...</td>
+      <td>v. 1-2. Andrea e Giovanni Gabrieli e la musica...</td>
+      <td>NaN</td>
+      <td>Instrumental music ; Vocal music, Italian ; Sa...</td>
+      <td>6 volumes, illustrations, facsimiles (part col...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Hirsch IV.975 ; H.14</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2225270</td>
+      <td>Chapman, Mary, (Musician)</td>
+      <td>NaN</td>
+      <td>Eight ball studies suitable for use in girls' ...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1940</td>
+      <td>1940</td>
+      <td>England</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Piano music ; Physical education and training</td>
+      <td>1 score (12 pages ), 26 cm + 1 volume (8 pages...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>D-07907.f.10</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div>
+
+
+
+
+```python
+n = 5
+dataset['Composer'].value_counts()[:n]
+#count the five most Composers
+```
+
+
+
+
+    Mozart, Wolfgang Amadeus    7716
+    Bach, Johann Sebastian      6877
+    Handel, George Frideric     6233
+    Beethoven, Ludwig van       5523
+    Haydn, Joseph               4603
+    Name: Composer, dtype: int64
+
+
+
+
+```python
+n = 5
+dataset['Composer'].value_counts()[:n].plot.pie(
+                                autopct='%1.0f%%')
+#display the five most composers in a pie chart
+```
+
+
+
+
+    <AxesSubplot:ylabel='Composer'>
+
+
+
+
+    
+![png](output_4_1.png)
+    
+
+
+
+```python
+
+```
