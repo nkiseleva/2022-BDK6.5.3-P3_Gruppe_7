@@ -8,7 +8,7 @@
 
 ### Fragen:
 
-**Frage 1:** In welchem Jahr wurden die meisten Werke veröffentlicht und wie viele (Grafik)? ✅
+**Frage 1:** In welchem Jahr wurden die meisten Werke veröffentlicht und wie viele (Grafik - Top10? ✅
 
 **Frage 2:** Welche 5 Komponisten haben die meisten Titel geschrieben (Grafik)?  ✅
 
