@@ -16,5 +16,5 @@
 
 **Frage 4:** Welcher Komponist hat im 20. Jahrhundert die meisten Werke geschrieben? [Top 3] - Ranking
 
-**Frage 5:** Welcher Publisher hat im 20. Jahrhundert die meisten Werke publiziert? [Top 3]
+**Frage 5:** Welcher Publisher hat im 20. Jahrhundert die meisten Werke publiziert? [Top 3] ✅
 
