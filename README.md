@@ -12,5 +12,5 @@
 
 **Frage 2:** Welche 5 Komponisten haben die meisten Titel geschrieben (Grafik - Top5)?  ✅
 
-**Frage 3:** Aus welchen Ländern stammen wie viele Titel in % (Grafik)?  ✅
+**Frage 3:** Aus welchen Ländern stammen wie viele Titel in % (Grafik - Top5)?  ✅
 
