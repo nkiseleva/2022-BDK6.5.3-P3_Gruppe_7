@@ -12,7 +12,7 @@
 
 **Frage 2:** Aus welchem Jahrhundert stammen wie viele Titel? [Grafik]
 
-**Frage 3:** Aus welchen Ländern stammen wie viele Titel in %? [Top 5] - [Grafik]
+**Frage 3:** Aus welchen Ländern stammen wie viele Titel in %? [Top 5] - [Grafik] ✅
 
 **Frage 4:** Welcher Komponist hat im 20. Jahrhundert die meisten Werke geschrieben? [Top 3] - Ranking
 
