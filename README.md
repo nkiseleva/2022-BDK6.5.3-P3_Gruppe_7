@@ -10,7 +10,7 @@
 
 **Frage 1:** In welchem Jahr wurden die meisten Werke veröffentlicht und wie viele (Grafik - Top10)? ✅
 
-**Frage 2:** Welche 5 Komponisten haben die meisten Titel geschrieben (Grafik - Top5)?  ✅
+**Frage 2:** Welche 5 Komponisten haben die meisten Titel geschrieben in % (Grafik - Top5)?  ✅
 
 **Frage 3:** Aus welchen Ländern stammen wie viele Titel in % (Grafik - Top5)?  ✅
 
